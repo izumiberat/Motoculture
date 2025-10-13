@@ -1,3 +1,435 @@
+/* ===== RESET ET BASE ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-green: #2e7d32;
+    --secondary-green: #4caf50;
+    --dark-gray: #333;
+    --light-gray: #f5f5f5;
+    --white: #ffffff;
+    --text-gray: #666;
+    --shadow: 0 2px 10px rgba(0,0,0,0.1);
+    --overlay: rgba(46, 125, 50, 0.85); /* Overlay vert semi-transparent */
+}
+
+body {
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    line-height: 1.6;
+    color: var(--dark-gray);
+    background-color: var(--white);
+}
+
+/* ===== TYPOGRAPHIE ===== */
+h1, h2, h3 {
+    line-height: 1.2;
+    margin-bottom: 1rem;
+    color: var(--dark-gray);
+}
+
+h2 {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    color: var(--primary-green);
+}
+
+h3 {
+    font-size: 1.4rem;
+    color: var(--primary-green);
+    margin-bottom: 0.5rem;
+}
+
+p {
+    margin-bottom: 1rem;
+    color: var(--text-gray);
+}
+
+/* ===== LAYOUT ET CONTENEUR ===== */
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+/* ===== EN-TÊTE ET NAVIGATION ===== */
+header {
+    background-color: var(--white);
+    box-shadow: var(--shadow);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+}
+
+.logo img {
+    height: 60px;
+    width: auto;
+    transition: transform 0.3s ease;
+}
+
+.logo img:hover {
+    transform: scale(1.05);
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 1.5rem;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--dark-gray);
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: var(--primary-green);
+}
+
+/* ===== SECTION HERO AVEC IMAGE DE FOND ===== */
+.hero {
+    background-image: linear-gradient(var(--overlay), var(--overlay)), 
+                      url('andre-motoculture-09.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: var(--white);
+    text-align: center;
+    padding: 6rem 1rem;
+    position: relative;
+}
+
+.hero h2 {
+    font-size: 2.2rem;
+    color: var(--white);
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    color: var(--white);
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+
+/* ===== BOUTONS CALL-TO-ACTION ===== */
+.cta-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.btn {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.btn-primary {
+    background-color: var(--white);
+    color: var(--primary-green);
+}
+
+.btn-primary:hover {
+    background-color: var(--light-gray);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: var(--white);
+    border: 2px solid var(--white);
+}
+
+.btn-secondary:hover {
+    background-color: var(--white);
+    color: var(--primary-green);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+/* ===== SECTIONS GÉNÉRIQUES ===== */
+section {
+    padding: 4rem 0;
+}
+
+.services, .pricing {
+    background-color: var(--light-gray);
+}
+
+/* ===== GRILLES RESPONSIVES ===== */
+.services-grid, .pricing-grid, .contact-grid {
+    display: grid;
+    gap: 2rem;
+}
+
+.services-grid {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.pricing-grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.contact-grid {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* ===== CARTES ===== */
+.service-card, .pricing-card {
+    background: var(--white);
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover, .pricing-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+.pricing-card {
+    border: 2px solid var(--primary-green);
+    position: relative;
+    overflow: hidden;
+}
+
+.pricing-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary-green), var(--secondary-green));
+}
+
+.price {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--primary-green);
+    margin: 1rem 0;
+}
+
+.pricing-card ul {
+    list-style: none;
+    text-align: left;
+}
+
+.pricing-card li {
+    padding: 0.3rem 0;
+    color: var(--text-gray);
+}
+
+.pricing-card li::before {
+    content: "✓ ";
+    color: var(--secondary-green);
+    font-weight: bold;
+}
+
+.pricing-note {
+    text-align: center;
+    font-style: italic;
+    margin-top: 2rem;
+    color: var(--text-gray);
+}
+
+/* ===== SECTION CONTACT ===== */
+.contact-info address p {
+    margin-bottom: 1.5rem;
+}
+
+.contact-info a {
+    color: var(--primary-green);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contact-info a:hover {
+    color: var(--secondary-green);
+    text-decoration: underline;
+}
+
+.opening-hours ul {
+    list-style: none;
+}
+
+.opening-hours li {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #eee;
+}
+
+/* ===== PIED DE PAGE ===== */
+footer {
+    background-color: var(--dark-gray);
+    color: var(--white);
+    text-align: center;
+    padding: 2rem 0;
+}
+
+.footer-logo {
+    margin-bottom: 1rem;
+}
+
+.footer-logo img {
+    height: 45px;
+    width: auto;
+    opacity: 0.9;
+}
+
+footer p {
+    color: var(--white);
+    margin-bottom: 0.5rem;
+    opacity: 0.9;
+}
+
+/* ===== DESIGN RESPONSIVE ===== */
+
+/* Tablettes */
+@media (max-width: 768px) {
+    h2 { font-size: 1.8rem; }
+    
+    header .container {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    nav ul {
+        gap: 1rem;
+    }
+    
+    .hero {
+        padding: 4rem 1rem;
+    }
+    
+    .hero h2 {
+        font-size: 1.8rem;
+    }
+    
+    section {
+        padding: 3rem 0;
+    }
+    
+    .logo img {
+        height: 50px;
+    }
+}
+
+/* Téléphones */
+@media (max-width: 480px) {
+    .container {
+        padding: 0 0.5rem;
+    }
+    
+    h2 { font-size: 1.6rem; }
+    
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.8rem;
+    }
+    
+    .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .btn {
+        width: 100%;
+        max-width: 250px;
+        text-align: center;
+    }
+    
+    .service-card, .pricing-card {
+        padding: 1.5rem;
+    }
+    
+    .services-grid, .pricing-grid, .contact-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .hero {
+        padding: 3rem 1rem;
+        background-position: center 30%;
+    }
+    
+    .logo img {
+        height: 45px;
+    }
+}
+
+/* Grands écrans */
+@media (min-width: 1200px) {
+    .hero {
+        padding: 8rem 1rem;
+        background-attachment: fixed; /* Effet parallaxe sur grands écrans */
+    }
+}
+
+/* Écrans très larges - optimisation de l'image de fond */
+@media (min-width: 2000px) {
+    .hero {
+        background-size: 100% auto;
+    }
+}
+
+/* ===== ACCESSIBILITÉ ===== */
+a:focus, button:focus {
+    outline: 2px solid var(--primary-green);
+    outline-offset: 2px;
+}
+
+/* Réduction des animations pour les préférences utilisateur */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+    
+    .hero {
+        background-attachment: scroll;
+    }
+}
+
+/* Mode sombre respectueux */
+@media (prefers-color-scheme: dark) {
+    .service-card, .pricing-card {
+        background: #2a2a2a;
+        color: #e0e0e0;
+    }
+}
+
 /* ===== ANIMATION TONDEUSE ===== */
 .lawnmower-animation-section {
     background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
