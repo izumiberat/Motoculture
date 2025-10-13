@@ -405,6 +405,14 @@ footer p {
     .btn {
         width: min(100%, 250px);
     }
+    
+    .bottom-logo {
+        width: 90%; /* Makes the logo almost the full width of the screen */
+        max-width: 400px; /* Optional: Sets a maximum width */
+        height: auto; /* Maintains the logo's aspect ratio */
+        display: block;
+        margin: 0 auto; /* Centers the logo */
+    }
 }
 
 @media (max-width: 480px) {
