@@ -17,7 +17,7 @@
     <meta property="og:image" content="andre-motoculture-09.jpg">
 
     <title>Andre Motoculture 09 - Entretien et réparation de matériel de jardin</title>
-    <link rel="stylesheet" href="stylecolor.css">
+    <link rel="stylesheet" href="style.css">
 
     <!-- Schema.org JSON-LD -->
     <script type="application/ld+json">
@@ -142,8 +142,8 @@
                         <p>Diagnostic et réparation de toutes marques de tondeuses, débroussailleuses, tronçonneuses.</p>
                     </div>
                     <div class="service-card">
-                        <h3>Spécialités</h3>
-                        <p>Nous réparons tous types de matériels : tondeuses, débroussailleuses, tronçonneuses, motoculteurs.</p>
+                        <h3>Vente de pièces</h3>
+                        <p>Nous proposons un large choix de pièces détachées pour tous vos équipements de motoculture.</p>
                     </div>
                 </div>
             </div>
@@ -153,7 +153,8 @@
         <section class="about">
             <div class="container">
                 <h2>Votre artisan local</h2>
-                <p>Basé à <strong>Carla Bayle (09130)</strong>, je vous propose un service de proximité pour l'entretien et la réparation de votre matériel de motoculture. Je me déplace dans un rayon de 20km autour de Carla Bayle pour diagnostiquer votre équipement.</p>
+                <p>Basé à <strong>Carla Bayle (09130)</strong>, je vous propose un service de proximité pour l'entretien et la réparation de votre matériel de motoculture. Je me déplace à votre domicile avec mon camion atelier aux alentours de Carla-Bayle pour diagnostiquer, réparer, ou récupérer votre matériel.</p>
+                <p class="travel-fee"><strong>Frais de déplacement : 20€</strong></p>
             </div>
         </section>
 
@@ -168,10 +169,8 @@
                         <h3>Équipements de Coupe</h3>
                         <div class="tool-items">
                             <span class="tool-item">Tronçonneuse</span>
-                            <span class="tool-item">Débroussailleuse</span>
                             <span class="tool-item">Taille haie</span>
                             <span class="tool-item">Élagueuse</span>
-                            <span class="tool-item">Coupe bordure</span>
                             <span class="tool-item">Broyeur de branches</span>
                         </div>
                     </div>
@@ -183,6 +182,8 @@
                             <span class="tool-item">Tondeuse débroussailleuse</span>
                             <span class="tool-item">Aspirateur broyeur souffleur</span>
                             <span class="tool-item">Souffleur</span>
+                            <span class="tool-item">Débroussailleuse</span>
+                            <span class="tool-item">Coupe bordure</span>
                         </div>
                     </div>
                     
@@ -220,6 +221,7 @@
                             <li>Nettoyage complet</li>
                             <li>Contrôle des niveaux</li>
                             <li>Affûtage des lames</li>
+                            <li>Contrôle des sécurités</li>
                         </ul>
                     </div>
                     <div class="pricing-card">
@@ -254,14 +256,83 @@
                             <p>✉️ <strong>E-mail</strong><br>
                             <a href="mailto:andremotoculture09@gmail.com">andremotoculture09@gmail.com</a></p>
                         </address>
+                        
+                        <div class="opening-hours">
+                            <h3>Horaires d'ouverture</h3>
+                            <ul>
+                                <li><span>Lun - Ven :</span> <span>9h-12h, 14h-18h</span></li>
+                                <li><span>Samedi :</span> <span>9h-12h</span></li>
+                                <li><span>Dimanche :</span> <span>Fermé</span></li>
+                            </ul>
+                        </div>
                     </div>
-                    <div class="opening-hours">
-                        <h3>Horaires d'ouverture</h3>
-                        <ul>
-                            <li><span>Lun - Ven :</span> <span>9h-12h, 14h-18h</span></li>
-                            <li><span>Samedi :</span> <span>9h-12h</span></li>
-                            <li><span>Dimanche :</span> <span>Fermé</span></li>
-                        </ul>
+                    
+                    <div class="contact-form-container">
+                        <h3>Demande de devis</h3>
+                        <p>Remplissez ce formulaire pour une demande de révision ou de réparation. Nous vous recontacterons rapidement.</p>
+                        
+                        <form id="contact-form" action="https://formspree.io/f/xvgwdrgz" method="POST">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="nom">Nom *</label>
+                                    <input type="text" id="nom" name="nom" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="prenom">Prénom *</label>
+                                    <input type="text" id="prenom" name="prenom" required>
+                                </div>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="telephone">Téléphone *</label>
+                                    <input type="tel" id="telephone" name="telephone" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="mail">Email *</label>
+                                    <input type="email" id="mail" name="mail" required>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="adresse">Adresse</label>
+                                <input type="text" id="adresse" name="adresse">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="motif">Motif de contact *</label>
+                                <select id="motif" name="motif" required>
+                                    <option value="" disabled selected>Sélectionnez une option</option>
+                                    <option value="revision">Révision</option>
+                                    <option value="reparation">Réparation</option>
+                                    <option value="diagnostic">Diagnostic</option>
+                                    <option value="pieces">Pièces détachées</option>
+                                    <option value="autre">Autre</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="description">Description du problème *</label>
+                                <textarea id="description" name="description" rows="4" required placeholder="Décrivez le problème rencontré avec votre matériel..."></textarea>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="marque">Marque de l'appareil</label>
+                                    <input type="text" id="marque" name="marque" placeholder="ex: Stihl, Husqvarna...">
+                                </div>
+                                <div class="form-group">
+                                    <label for="modele">Modèle de l'appareil</label>
+                                    <input type="text" id="modele" name="modele" placeholder="ex: FS 55, 123R...">
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-primary">Envoyer ma demande</button>
+                            </div>
+                            
+                            <p class="form-note">* Champs obligatoires</p>
+                        </form>
                     </div>
                 </div>
             </div>
